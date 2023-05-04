@@ -47,11 +47,7 @@ func (c *CreateAsset) Execute(
 	if err := storage.SetAsset(ctx, db, txID, c.Metadata, 0, actor, false); err != nil {
 		return &chain.Result{Success: false, Units: unitsUsed, Output: utils.ErrBytes(err)}, nil
 	}
-
-	/// TODO: It is important to return the correct Chain Result and nil for any errors
-	//		  in this section. This will ensure that the user and the chain receive
-	//		  accurate values whenever they use this action.
-	return nil, nil
+	return &chain.Result{Success: true, Units: unitsUsed}, nil
 }
 
 func (c *CreateAsset) MaxUnits(chain.Rules) uint64 {

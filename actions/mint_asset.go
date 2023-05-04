@@ -23,17 +23,14 @@ import (
 var _ chain.Action = (*MintAsset)(nil)
 
 type MintAsset struct {
-	// TODO: The "To" parameter, which represents the recipient of the [Value]
-	//		 and is a public key, is currently missing. We need to add support for JSON format by adding json:"to".
-	// -----
+	// To is the recipient of the [Value].
+	To crypto.PublicKey `json:"to"`
 
-	// TODO: The "Asset" parameter, which represents the asset (the [TxID] that created the asset)
-	//		 and is a ids.ID, is currently missing. We need to add support for JSON format by adding json:"asset".
-	// -----
+	// Asset is the [TxID] that created the asset.
+	Asset ids.ID `json:"asset"`
 
-	// TODO: The "Value" parameter, which represents the [Value] of the mint
-	//		 and is a uint64, is currently missing. We need to add support for JSON format by adding json:"value".
-	// -----
+	// Number of assets to mint to [To].
+	Value uint64 `json:"value"`
 }
 
 func (m *MintAsset) StateKeys(chain.Auth, ids.ID) [][]byte {
