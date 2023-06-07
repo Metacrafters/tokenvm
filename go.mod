@@ -1,11 +1,12 @@
-module github.com/ava-labs/hypersdk/examples/tokenvm
+module tokenvm
 
 go 1.20
 
 require (
 	github.com/ava-labs/avalanche-network-runner v1.4.1
 	github.com/ava-labs/avalanchego v1.10.1
-	github.com/ava-labs/hypersdk v0.0.1
+	github.com/ava-labs/hypersdk v0.0.7
+	github.com/ava-labs/hypersdk/examples/tokenvm v0.0.0-20230511233943-bdd30e00bdff
 	github.com/fatih/color v1.13.0
 	github.com/manifoldco/promptui v0.9.0
 	github.com/onsi/ginkgo/v2 v2.7.0
@@ -141,5 +142,3 @@ require (
 	gopkg.in/urfave/cli.v1 v1.20.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/ava-labs/hypersdk => ../../
