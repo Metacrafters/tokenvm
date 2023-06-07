@@ -6,7 +6,7 @@ package utils
 import (
 	"github.com/ava-labs/hypersdk/crypto"
 
-	"tokenvm/consts"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/consts"
 )
 
 func Address(pk crypto.PublicKey) string {

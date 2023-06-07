@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"tokenvm/consts"
-	"tokenvm/version"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/consts"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/version"
 )
 
 func init() {

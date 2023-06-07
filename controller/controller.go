@@ -20,15 +20,15 @@ import (
 	"github.com/ava-labs/hypersdk/vm"
 	"go.uber.org/zap"
 
-	"tokenvm/actions"
-	"tokenvm/auth"
-	"tokenvm/config"
-	"tokenvm/consts"
-	"tokenvm/genesis"
-	"tokenvm/orderbook"
-	"tokenvm/rpc"
-	"tokenvm/storage"
-	"tokenvm/version"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/actions"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/auth"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/config"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/consts"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/genesis"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/orderbook"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/rpc"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/storage"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/version"
 )
 
 var _ vm.Controller = (*Controller)(nil)
@@ -156,7 +156,12 @@ func (c *Controller) Initialize(
 		bcfg.PreferredBlocksPerSecond = c.config.GetPreferredBlocksPerSecond()
 		build = builder.NewTime(inner, bcfg)
 		gcfg := gossiper.DefaultProposerConfig()
-		gcfg.BuildProposerDiff = 1 // don't gossip if producing the next block
+		gcfg.GossipInterval = c.config.GossipInterval
+		gcfg.GossipMaxSize = c.config.GossipMaxSize
+		gcfg.GossipProposerDiff = c.config.GossipProposerDiff
+		gcfg.GossipProposerDepth = c.config.GossipProposerDepth
+		gcfg.BuildProposerDiff = c.config.BuildProposerDiff
+		gcfg.VerifyTimeout = c.config.VerifyTimeout
 		gossip = gossiper.NewProposer(inner, gcfg)
 	}
 

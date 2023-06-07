@@ -6,11 +6,10 @@ package orderbook
 import (
 	"sync"
 
-	"tokenvm/actions"
-	"tokenvm/utils"
-
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/hypersdk/crypto"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/actions"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/utils"
 	"github.com/ava-labs/hypersdk/heap"
 	"go.uber.org/zap"
 )

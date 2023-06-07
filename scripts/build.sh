@@ -24,7 +24,7 @@ name="tHBYNu8ikqo4MWMHehC9iKB9mR5tB3DWzbkYmTfe9buWQ5GZ8"
 mkdir -p ./build
 
 echo "Building tokenvm in ./build/$name"
-go build -buildvcs=false -o ./build/$name ./cmd/tokenvm
+go build -o ./build/$name ./cmd/tokenvm
 
 echo "Building token-cli in ./build/token-cli"
-go build -buildvcs=false -o ./build/token-cli ./cmd/token-cli
+go build -o ./build/token-cli ./cmd/token-cli

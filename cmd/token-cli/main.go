@@ -7,8 +7,7 @@ package main
 import (
 	"os"
 
-	"tokenvm/cmd/token-cli/cmd"
-
+	"github.com/ava-labs/hypersdk/examples/tokenvm/cmd/token-cli/cmd"
 	"github.com/ava-labs/hypersdk/utils"
 )
 
