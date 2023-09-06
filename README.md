@@ -68,4 +68,4 @@ Close the Network: After testing, close the local Avalanche network using the ki
 This project was created by codeWithNoob
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the BSD License.
