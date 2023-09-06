@@ -13,13 +13,12 @@ import (
 
 const (
 	// TODO: choose a human-readable part for your hyperchain
-	HRP = ""
+	HRP = "token"
 	// TODO: choose a name for your hyperchain
-	Name = ""
+	Name = "testChain"
 	// TODO: choose a token symbol
-	Symbol = ""
+	Symbol = "TC"
 )
-
 var ID ids.ID
 
 func init() {
